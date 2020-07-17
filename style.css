@@ -48,7 +48,16 @@ body {
     color: white;
 }
 .dropmenu {
-    display: none;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.4s cubic-bezier(0,0,0.3,1);
+}
+.dropmenu.is-open {
+    opacity: 1;
 }
 .c-boxes .boxes {
     display: none;
@@ -60,6 +69,9 @@ body {
     opacity: 0.5;
 }
 .h.boxes .box.active {
+    opacity: 1;
+}
+.h.boxes.init .box {
     opacity: 1;
 }
 .boxes {
@@ -101,39 +113,43 @@ body {
 }
 .card-h img {
     position: absolute;
-    height: 100%;
+    height: 90%;
     width: auto;
     right: -40px;
-    transition: all .2s ease-out;
+    transition: transform 0.3s cubic-bezier(0,0,0.3,1);
 }
 .box.active .card-h img{
-    height: 120%;
+    transform: scale(1.25);
 }
-/* .card-h:hover img{
-    height: 110%;
-} */
+.card-h:hover img{
+    transform: scale(1.25);
+}
 .card {
     position: relative;
     background-color: white;
     width: 100%;
     border-radius: 5px;
-    height: 200px;
+    height: calc((100vw - 1.5em) / 6);
     cursor: pointer;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 .card p{
     margin: 1em auto;
-    font-size: .85em;
+    font-size: calc(0.5vw + 8px);
     font-weight: 600!important;
     width: 50%;  
 }
 .card img {
     height: 50%;
+    transition: transform 0.3s cubic-bezier(0,0,0.3,1);
+}
+.card:hover img {
+    transform: scale(1.2);
 }
 .arrow {
     position: relative;
@@ -317,6 +333,12 @@ body {
         flex: 1;
         min-width: calc(50% - 0.5em);
         max-width: calc(50% - 0.5em);
+    }
+    .mbc-boxes .box .card{
+        height: calc((100vw - 1.5em) / 2);
+    }
+    .box .card p {
+        width: 80%;
     }
     .mb-menu  .active .boxes .box .arrow-right,  .mb-menu  .active .boxes .box .arrow-left{
         translate: rotate(0);

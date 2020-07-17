@@ -10,6 +10,7 @@ $(document).ready(function () {
 
     $(".h.boxes .box").each(function (index, el) {
         $(this).on("mouseenter click", function() {
+            $('.dropmenu .h.boxes').removeClass('init');
             $(".h.boxes .box").removeClass('active');
             $(this).addClass('active');
             $('.c-boxes .boxes').removeClass('active');
@@ -19,15 +20,20 @@ $(document).ready(function () {
 
     $('.toggle-menu').on('mouseenter', function(e){
         e.preventDefault();
-        $('.dropmenu').slideToggle();
         $('.dropmenu').toggleClass('is-open');
         $(this).toggleClass('open');
+        $('.dropmenu .h-boxes').fadeToggle();
+
     });
+
     $('.dropmenu').on('mouseleave', function(e){
         e.preventDefault();
-        $('.dropmenu').slideToggle(true);
         $('.dropmenu').removeClass('is-open');
+        $('.dropmenu .boxes').removeClass('active');
+        $('.dropmenu .h.boxes').addClass('init');
+        $('.dropmenu .c-boxes .boxes').removeClass('init');
     });
+
     $('.hamburger').on('click', function(e){
         e.preventDefault();
         $('.sidenav').slideToggle();
