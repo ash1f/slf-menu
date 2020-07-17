@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     $(".h.boxes .box").each(function (index, el) {
-        $(this).on("click", function() {
+        $(this).on("mouseenter click", function() {
             $(".h.boxes .box").removeClass('active');
             $(this).addClass('active');
             $('.c-boxes .boxes').removeClass('active');
@@ -17,7 +17,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.toggle-menu').on('mouseenter click', function(e){
+    $('.toggle-menu').on('mouseenter', function(e){
         e.preventDefault();
         $('.dropmenu').slideToggle();
         $('.dropmenu').toggleClass('is-open');
