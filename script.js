@@ -23,6 +23,11 @@ $(document).ready(function () {
         $('.dropmenu').toggleClass('is-open');
         $(this).toggleClass('open');
     });
+    $('.dropmenu').on('mouseleave', function(e){
+        e.preventDefault();
+        $('.dropmenu').slideToggle(true);
+        $('.dropmenu').removeClass('is-open');
+    });
     $('.hamburger').on('click', function(e){
         e.preventDefault();
         $('.sidenav').slideToggle();
