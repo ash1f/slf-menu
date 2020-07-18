@@ -12336,7 +12336,7 @@ yellow-text{
     }
     .box .crd p, .box .card-h p {
         width: 80%;
-        font-size: calc(1vw + 8px);
+        font-size: calc(2vw + 8px);
     }
     .mb-menu  .active .boxes .box .arrow-right,  .mb-menu  .active .boxes .box .arrow-left{
         translate: rotate(0);
