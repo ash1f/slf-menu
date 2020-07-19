@@ -20,6 +20,15 @@
         }
     });
 
+    $(window).on("scroll", function() {
+        if($(window).scrollTop() > 50 || $('.dropmenu').hasClass('is-open')) {
+            $(".header").addClass("active");
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+        $(".header").removeClass("active");
+        }
+    });
+
     $(".hamburger").click(function () {
         $(this).toggleClass("is-active");
     });
@@ -30,7 +39,7 @@
 
     $(".h.boxes .box").each(function (index, el) {
         $(this).on("mouseenter click", function() {
-            $('.dropmenu .h.boxes').removeClass('init');
+            $('.h.boxes').addClass('hovered');
             $(".h.boxes .box").removeClass('active');
             $(this).addClass('active');
             $('.c-boxes .boxes').removeClass('active');
@@ -42,20 +51,27 @@
     $('.toggle-menu').on('mouseenter', function(e){
         e.preventDefault();
         $('.dropmenu').toggleClass('is-open');
+        $('.header').addClass('active');
         //$(this).toggleClass('open');
         //$('.dropmenu .h-boxes').fadeToggle();
     });
 
     $('.dropmenu').on('mouseleave', function(e){
         e.preventDefault();
+        $('.h.boxes').removeClass('hovered');
         $('.dropmenu').removeClass('is-open');
+        $(".h.boxes .box").removeClass('active');
+        if(window.pageYOffset < 70){
+            $('.header').removeClass('active');
+        }
         $('.dropmenu .boxes').removeClass('active');
-        $('.dropmenu .h.boxes').addClass('init');
-        $('.dropmenu .c-boxes .boxes').removeClass('init');
     });
 
     $('.hamburger').on('click', function(e){
         e.preventDefault();
+        if(window.pageYOffset < 70){
+            $('.header').removeClass('active');
+        }
         $('.sidenav').slideToggle();
         $(this).toggleClass('open');
     });
