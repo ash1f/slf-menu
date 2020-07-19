@@ -195,8 +195,6 @@ a:hover {
     padding: 0px 10px;
     color:#6093cb !important;
 }
-
-
 .white-newsletter-text{
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 700;
@@ -12042,9 +12040,11 @@ yellow-text{
 .dropmenu {
     position: absolute;
     width: 100%;
-    top: -2000px;
+    top: 70px;
     right: 0;
     left: 0;
+    height: calc(100vh - 70px);
+    background: rgba(0, 26, 41, 0.8);
     opacity: 0;
     z-index: 100;
     pointer-events: none;
@@ -12097,7 +12097,7 @@ yellow-text{
     overflow: hidden;
     align-items: center;
     opacity: 0;
-    transition: opacity .5s ease-out .1s;
+    transition: opacity .5s linear;
 }
 .card-h p{
     margin: 0;
@@ -12255,13 +12255,15 @@ yellow-text{
     display: none;
   }
   .sidenav-menu ul li a.toggle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
     color: #fefefe;
     font-weight: bold;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .75em 1em;
+    padding: 1em 1em;
     transition: background 0.3s ease;
   }
   
@@ -12293,7 +12295,7 @@ yellow-text{
         display: flex;
         flex-direction: column;
         padding: 0;
-        max-height:  calc(450px + 1.5em);
+        max-height: calc(100vh - 6em);        
         overflow: auto;
     }
     .boxes-menu .c-boxes{
@@ -12341,25 +12343,25 @@ yellow-text{
         transform: translateY(-10px)
     }
     .sidenav-menu li:nth-child(1) .card-h, .mbc-boxes .box:nth-child(1) .crd{
-        animation-delay: 0.2s;
+        animation-delay: 0s;
     }
     .sidenav-menu li:nth-child(2) .card-h, .mbc-boxes .box:nth-child(2) .crd{
-        animation-delay: 0.4s;
+        animation-delay: 0.2s;
     }
     .sidenav-menu li:nth-child(3) .card-h, .mbc-boxes .box:nth-child(3) .crd{
-        animation-delay: 0.6s;
+        animation-delay: 0.4s;
     }
     .sidenav-menu li:nth-child(4) .card-h, .mbc-boxes .box:nth-child(4) .crd{
-        animation-delay: 0.8s;
+        animation-delay: 0.6s;
     }
     .sidenav-menu li:nth-child(5) .card-h, .mbc-boxes .box:nth-child(5) .crd{
-        animation-delay: 1s;
+        animation-delay: 0.8s;
     }
     .sidenav-menu li:nth-child(6) .card-h, .mbc-boxes .box:nth-child(6) .crd{
-        animation-delay: 1.2s;
+        animation-delay: 1s;
     }
     .sidenav-menu li:nth-child(7) .card-h, .mbc-boxes .box:nth-child(7) .crd{
-        animation-delay: 1.4s;
+        animation-delay: 1.2s;
     }
     .mb-menu.show .card-h, .mbc-boxes .crd {
         visibility: visible;
