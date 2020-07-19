@@ -20,14 +20,16 @@
         }
     });
 
-    $(window).on("scroll", function() {
-        if($(window).scrollTop() > 50 || $('.dropmenu').hasClass('is-open') || $('.hamburger').hasClass('is-active')) {
-            $(".header").addClass("active");
-        } else {
-            //remove the background property so it comes transparent again (defined in your css)
-        $(".header").removeClass("active");
-        }
-    });
+    if(window.innerWidth > 767){
+        $(window).on("scroll", function() {
+            if($(window).scrollTop() > 50 || $('.dropmenu').hasClass('is-open')) {
+                $(".header").addClass("active");
+            } else {
+                //remove the background property so it comes transparent again (defined in your css)
+            $(".header").removeClass("active");
+            }
+        });
+    }
 
     $(".hamburger").click(function () {
         $(this).toggleClass("is-active");
