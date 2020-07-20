@@ -12044,7 +12044,7 @@ yellow-text{
     right: 0;
     left: 0;
     height: calc(100vh - 70px);
-    background: rgba(0, 26, 41, 0.8);
+    background: rgba(0, 26, 41, 0.7);
     opacity: 0;
     z-index: 100;
     pointer-events: none;
@@ -12054,6 +12054,9 @@ yellow-text{
 }
 .dropmenu.is-open {
     opacity: 1;
+}
+.boxes-menu {
+    background-color: #00283c;
 }
 .c-boxes .boxes {
     display: none;
