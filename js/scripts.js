@@ -57,8 +57,7 @@
         e.preventDefault();
         $('.dropmenu').toggleClass('is-open');
         $('.header').addClass('active');
-        //$(this).toggleClass('open');
-        //$('.dropmenu .h-boxes').fadeToggle();
+        $('.toggle-menu .arrow').addClass('rotated');
     });
 
     $('.menu > ul li a:not(.toggle-menu)').on('mouseenter', function(e){
@@ -72,6 +71,7 @@
     $('.dropmenu .boxes-menu').on('mouseleave', function(e){
         e.preventDefault();
         $('.h.boxes').removeClass('hovered');
+        $('.toggle-menu .arrow').removeClass('rotated');
         $('.dropmenu').removeClass('is-open');
         $(".h.boxes .box").removeClass('active');
         if(window.pageYOffset < 70){
@@ -113,24 +113,26 @@
         $('.navbar-collapse').collapse('hide');
     });
 
-    // Activate scrollspy to add active class to navbar items on scroll
+    // // Activate scrollspy to add active class to navbar items on scroll
     $('body').scrollspy({
-        target: '#mainNav',
+        target: '.header',
         offset: 75
     });
 
-    // Collapse Navbar
-    var navbarCollapse = function () {
-        if ($("#mainNav").offset().top > 100) {
-            $("#mainNav").addClass("navbar-scrolled");
-        } else {
-            $("#mainNav").removeClass("navbar-scrolled");
-        }
-    };
+    // // Collapse Navbar
+    // var navbarCollapse = function () {
+    //     if ($("#mainNav").offset().top > 100) {
+    //         $("#mainNav").addClass("navbar-scrolled");
+    //     } else {
+    //         $("#mainNav").removeClass("navbar-scrolled");
+    //     }
+    // };
+
     // Collapse now if page is not at top
-    navbarCollapse();
+    //navbarCollapse();
+
     // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
+    //$(window).scroll(navbarCollapse);
 
     // Magnific popup calls
     $('#portfolio').magnificPopup({
