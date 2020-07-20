@@ -61,6 +61,14 @@
         //$('.dropmenu .h-boxes').fadeToggle();
     });
 
+    $('.menu > ul li a:not(.toggle-menu)').on('mouseenter', function(e){
+        e.preventDefault();
+        $('.dropmenu').removeClass('is-open');
+        if(window.pageYOffset < 70){
+            $('.header').removeClass('active');
+        }
+    });
+
     $('.dropmenu .boxes-menu').on('mouseleave', function(e){
         e.preventDefault();
         $('.h.boxes').removeClass('hovered');
