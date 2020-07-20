@@ -12431,6 +12431,7 @@ yellow-text{
         padding: .25em .25em!important;
     }
     .mbc-boxes {
+        padding: 0 .75em;
         flex-wrap: wrap;
     }
     .mbc-boxes .box{
