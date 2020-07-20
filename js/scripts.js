@@ -55,7 +55,9 @@
 
     $('.toggle-menu').on('mouseenter', function(e){
         e.preventDefault();
-        $('.dropmenu').toggleClass('is-open');
+        if(!$('.dropmenu').hasClass('is-open')){
+            $('.dropmenu').toggleClass('is-open');
+        }
         $('.header').addClass('active');
     });
     $('.menu > ul li a:not(.toggle-menu)').on('mouseenter', function(e){
