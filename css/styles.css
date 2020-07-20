@@ -12016,6 +12016,9 @@ yellow-text{
     visibility: visible;
     pointer-events: auto;
 }
+.toggle-menu:hover .arrow {
+    transform: rotate(180deg)
+}
 .dropmenu {
     background-color: #001A29;
 }
