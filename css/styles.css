@@ -12267,7 +12267,7 @@ yellow-text{
     overflow: hidden;
     display: none;
   }
-  .sidenav-menu ul li a.toggle {
+  .sidenav-menu ul li a {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     color: #fefefe;
